@@ -9,7 +9,7 @@ Installation
 This command depends on Git.
 
 ```sh
-$ git clone git@github.com:dceoy/github-pages-deploy.git
+$ git clone https://github.com/dceoy/github-pages-deploy.git
 $ cp github-pages-deploy/github-pages-deploy /path/to/bin/  # a path in ${PATH}
 ```
 
@@ -23,7 +23,7 @@ $ cd /path/to/your/github/project/
 $ github-pages-deploy ./html
 ```
 
-The command detects the remote URL from `./.git/config`.
+`github-pages-deploy` detects the remote URL from `./.git/config`.
 
 Usage
 -----
