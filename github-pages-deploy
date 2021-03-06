@@ -3,7 +3,7 @@
 # GitHub Pages Deploy Script
 #
 # Usage:
-#   github-pages-deploy [--debug] [--remote=<url>] [<dir>]
+#   github-pages-deploy [--debug] [--remote=<url>] <dir>
 #   github-pages-deploy --version
 #   github-pages-deploy -h|--help
 #
@@ -30,7 +30,7 @@ SCRIPT_DIR_PATH=$(dirname "${SCRIPT_PATH}")
 SCRIPT_VERSION='v0.1.0'
 GH_PAGES_BRANCH='gh-pages'
 GH_REMOTE_URL=''
-HTML_DIR_PATH='./html'
+HTML_DIR_PATH=''
 MAIN_ARGS=()
 
 function print_version {
@@ -87,10 +87,10 @@ if [[ -z "${GH_REMOTE_URL}" ]]; then
   )
 fi
 
-if [[ ${#MAIN_ARGS[@]} -gt 1 ]]; then
-  abort "$(print_usage)"
-elif [[ ${#MAIN_ARGS[@]} -eq 1 ]]; then
+if [[ ${#MAIN_ARGS[@]} -eq 1 ]]; then
   HTML_DIR_PATH="${MAIN_ARGS[0]}"
+else
+  abort "$(print_usage)"
 fi
 
 printf "GH_REMOTE_URL:  \t%s\n" "${GH_REMOTE_URL}"

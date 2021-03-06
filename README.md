@@ -33,7 +33,7 @@ $ github-pages-deploy --help
 GitHub Pages Deploy Script
 
 Usage:
-  github-pages-deploy [--debug] [--remote=<url>] [<dir>]
+  github-pages-deploy [--debug] [--remote=<url>] <dir>
   github-pages-deploy --version
   github-pages-deploy -h|--help
 
